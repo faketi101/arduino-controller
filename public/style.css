@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap");
+
+body {
+  font-family: Oswald;
+  font-weight: 600;
+  box-sizing: border-box;
+  background: #36393f;
+}
+h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.container {
+  text-align: center;
+  width: 1120px;
+  margin: auto;
+}
+.light_btn {
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.btn_off {
+  color: #ff5301;
+  border-bottom: 2px solid #ff5301;
+}
+.btn_on {
+  color: #5865f2;
+  border-bottom: 2px solid #5865f2;
+}

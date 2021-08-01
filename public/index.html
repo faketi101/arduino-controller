@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="./style.css" type="text/css" media="all" />
+        <title>Arduino Controller</title>
+    </head>
+<body>
+    
+<div class="container">
+    <h1>Arduino Controller</h1>
+    <div class="" id="lights">
+        <button id="light" type="" class="light_btn btn_off">Light Off</button>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    const server_url = "http://localhost:8080"
+    // var socket = io(server_url);
+    const light = document.getElementById("light");
+    let status = true;
+    
+    light.addEventListener("click", () =>{
+        // console.log(status)
+        if(status){
+            sendData(server_url+"/test", {type: "lights", status: "1"})
+            lightOff()
+        }else if(!status){
+            sendData(server_url+"/test", {type: "lights", status: "0"})
+
+            lightOn()
+           
+
+        }
+    })
+
+    function sendData (url, data){
+        let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("data", JSON.stringify(data));
+
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Request finished. Do processing here.
+    }
+}
+    xhr.send(data);
+    }
+
+
+    function lightOn (){
+        light.classList.add("btn_off");
+        light.classList.remove("btn_on");
+        light.innerText = "LIGHT OFF";
+        status = true;
+    }
+    function lightOff (){
+        light.classList.add("btn_on");
+        light.classList.remove("btn_off");
+        light.innerText = "LIGHT ON";
+        status = false;
+    }
+</script>
+</body>
+</html>
