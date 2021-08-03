@@ -13,6 +13,7 @@ app.use(cors());
 // setting port
 const serialPort = require("serialport");
 const parsers = serialPort.parsers;
+
 const parser = new parsers.Readline({
   delimiter: "\r\n",
 });
@@ -29,7 +30,7 @@ arduinoPort.pipe(parser);
 // sending controller html file
 app.post("/test", async (req, res) => {
   const data = JSON.parse(req.headers.data);
-  // console.log(data);
+  console.log(data);
   arduinoPort.write(data.status);
 
   res.send(req.body);
