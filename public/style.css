@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap");
 
 body {
-  font-family: Oswald;
+  font-family: Oswald !important;
   font-weight: 600;
   box-sizing: border-box;
   background: #36393f;
@@ -10,9 +10,16 @@ h1 {
   color: #ffffff;
   text-transform: uppercase;
 }
+p {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #ffffff;
+}
 .container {
   text-align: center;
-  width: 1120px;
+  width: 570px;
   margin: auto;
 }
 .light_btn {
@@ -26,6 +33,7 @@ h1 {
   outline: none;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .btn_off {
   color: #ff5301;
@@ -34,4 +42,52 @@ h1 {
 .btn_on {
   color: #5865f2;
   border-bottom: 2px solid #5865f2;
+}
+.servo_div {
+  margin: 10px 0;
+}
+.s_btn {
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 40px;
+  width: 40px;
+  color: #5865f2;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.s_btn_r {
+  border-bottom: 2px solid #5865f2;
+  border-right: 2px solid #5865f2;
+}
+.s_btn_l {
+  border-bottom: 2px solid #5865f2;
+  border-left: 2px solid #5865f2;
+}
+.s_inp {
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 33px;
+  width: 53px;
+  color: #ff5301;
+  outline: none;
+  border: 2px solid #5865f2;
+  border-radius: 5px;
+  text-align: center;
+  padding-left: 10px;
+}
+.s_btn_r:hover {
+  color: #ff5301;
+  border-bottom: 2px solid #ff5301;
+  border-right: 2px solid #ff5301;
+}
+.s_btn_l:hover {
+  color: #ff5301;
+  border-bottom: 2px solid #ff5301;
+  border-left: 2px solid #ff5301;
 }
